@@ -22,6 +22,15 @@ p = zeros(size(X, 1), 1);
 %
 
 
+X = [ones(m,1) X];
+z = X*Theta1';
+a = sigmoid(z);
+a = [ones(m,1) a];
+z2 = a * Theta2';
+a2 = sigmoid(z2);
+[value,index] = max(a2, [],2);
+p = index;
+
 
 
 
